@@ -14,5 +14,9 @@ def get_last_songs(artist):
             parts = event['sets']['set']
             songs = []
             for part in parts:
-                songs += [song['@name'] for song in part['song']]
+                songparts = part['song']
+                if type(songparts) == dict:
+                    songs.append(songparts['@name'])
+                else:
+                    songs += [song['@name'] for song in songparts]
             return songs

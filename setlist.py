@@ -1,15 +1,15 @@
-from gmusicapi import Mobileclient
-
+from googleplay import GmusicApi
 from setlistfm import get_last_songs
 
 
 def main():
-    songs = get_last_songs('Ghost')
-    print(songs)
-    # email, password, setlistFm = read_credentials()
-    # api = Mobileclient()
-    # logged_in = api.login(email, password, Mobileclient.FROM_MAC_ADDRESS)
-    # print(logged_in)
+    email, password, setlistFm = read_credentials()
+    artist = 'Dream Theater'
+    songs = get_last_songs(artist)
+
+    api = GmusicApi(email, password)
+    api.make_playlist(artist, songs)
+    api.close()
 
 
 def read_credentials():
