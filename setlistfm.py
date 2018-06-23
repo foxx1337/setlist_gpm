@@ -20,7 +20,7 @@ def get_last_songs(artist, api_key):
             for part in parts:
                 songparts = part['song']
                 if type(songparts) == dict:
-                    songs.append(songparts['@name'])
+                    songs.append(songparts['name'])
                 else:
                     # it's a list
                     songs += [song['name'] for song in songparts]
