@@ -4,15 +4,21 @@ This utility will create Google Play Music playlists to help "get the homework d
 when going to a concert.
 
 The following setup is necessary:
+
 1. Run `pip install -r requirements.txt` (will grab the execellent gmusicapi)
+
 2. Create a file called `credentials.txt` with your Google credentials and
-   (now ignored, just put a dummy line there) setlist.fm API key:
-   
+   the setlist.fm API key: 
    ```
    user@gmail.com:application_key
    dummy text here for setlist.fm api
    ```
-3. Run this script now:
+   
+   The API key can be found at
+   [https://www.setlist.fm/settings/api/your-username](https://www.setlist.fm/settings/api/your-username).
+   
+3. Run the script now, with an artist name as argument:
+
    ```
    $ python setlist.py "Dream Theater"
    ```
