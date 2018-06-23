@@ -22,5 +22,6 @@ The following setup is necessary:
    ```
    $ python setlist.py "Dream Theater"
    ```
+
 If everything's successful, a new playlist called "Dream Theater-date" should appear
-in the Google Play Music account.
+in your Google Play Music account.

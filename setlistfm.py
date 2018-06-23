@@ -1,16 +1,16 @@
 import requests
 
 
-def get_setlists(artist):
-    r = requests.get('http://api.setlist.fm/rest/0.1/search/setlists?artistName=' + artist, headers={'Accept': 'application/json'})
+def get_setlists(artist, api_key):
+    r = requests.get('https://api.setlist.fm/rest/1.0/search/setlists?artistName=' + artist, headers={'Accept': 'application/json', 'x-api-key': api_key})
     return r.json()
 
 
-def get_last_songs(artist):
-    result = get_setlists(artist)
-    setlist = result['setlists']['setlist']
+def get_last_songs(artist, api_key):
+    result = get_setlists(artist, api_key)
+    setlist = result['setlist']
     for event in setlist:
-        if event['sets']:
+        if event['sets'] and len(event['sets']['set']) > 0:
             parts = event['sets']['set']
             songs = []
             if type(parts) == dict:
@@ -23,5 +23,5 @@ def get_last_songs(artist):
                     songs.append(songparts['@name'])
                 else:
                     # it's a list
-                    songs += [song['@name'] for song in songparts]
+                    songs += [song['name'] for song in songparts]
             return songs

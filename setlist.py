@@ -22,7 +22,7 @@ Creates a playlist called "<artist>-today's date".'''
 
     email, password, setlistFm = read_credentials()
     artist = arguments.artist
-    songs = get_last_songs(artist)
+    songs = get_last_songs(artist, setlistFm)
 
     api = GmusicApi(email, password)
     api.make_playlist(artist, songs)
