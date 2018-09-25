@@ -11,10 +11,10 @@ The following setup is necessary:
    the setlist.fm API key: 
    ```
    user@gmail.com:application_key
-   dummy text here for setlist.fm api
+   setlist.fm api key
    ```
    
-   The API key can be found at
+   The setlist.fm API key can be found at
    [https://www.setlist.fm/settings/api/your-username](https://www.setlist.fm/settings/api/your-username).
    
 3. Run the script now, with an artist name as argument:
